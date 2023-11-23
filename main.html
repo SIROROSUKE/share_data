@@ -1,85 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        pre {
-            white-space: pre-wrap;
-        }
-    </style>
-</head>
-<body>
-
-<h1>GitHub JSON Viewer</h1>
-
-<button onclick="loadAndDisplayJSON()">Load JSON from GitHub</button>
-<div id="json-container"></div>
-
-<script>
-    async function loadAndDisplayJSON() {
-        const repoOwner = 'SIROROSUKE'; // GitHubユーザー名
-        const repoName = 'share_data'; // リポジトリ名
-        const filePath = 'data.json'; // JSONファイルのパス
-        const rawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/${filePath}`;
-
-        try {
-            const response = await fetch(rawUrl);
-            const jsonData = await response.json();
-
-            // JSONデータを文字列に変換して表示
-            const jsonContainer = document.getElementById('json-container');
-            jsonContainer.innerHTML = `<h2>JSON Content:</h2><pre>${JSON.stringify(jsonData, null, 2)}</pre>`;
-        } catch (error) {
-            console.error('Error loading JSON:', error);
-        }
-    }
-</script>
-
-</body>
-</html>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub JSON Viewer</title>
     <style>
-        body {<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Viewer</title>
-</head>
-<body>
-
-<h1>JSON Viewer</h1>
-
-<script>
-    async function fetchData() {
-        try {
-            const response = await fetch('data.json');
-            const jsonData = await response.json();
-
-            console.log(jsonData.message); // 出力: Hello
-        } catch (error) {
-            console.error('Error fetching JSON:', error);
-        }
-    }
-
-    fetchData();
-</script>
-
-</body>
-</html>
-
+        body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
