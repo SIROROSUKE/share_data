@@ -24,22 +24,28 @@
 
 <script>
     async function loadAndDisplayJSON() {
-        const repoOwner = 'SIROROSUKE'; // GitHubユーザー名
-        const repoName = 'share_data'; // リポジトリ名
-        const filePath = 'data.json'; // JSONファイルのパス
-        const rawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/${filePath}`;
+    const repoOwner = 'SIROROSUKE';
+    const repoName = 'share_data';
+    const filePath = 'data.json';
+    const rawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/${filePath}`;
 
-        try {
-            const response = await fetch(rawUrl);
-            const jsonData = await response.json();
+    try {
+        const response = await fetch(rawUrl);
+        const jsonData = await response.json();
 
-            // "message" プロパティの値だけを取り出して表示
-            const jsonContainer = document.getElementById('json-container');
-            jsonContainer.innerHTML = `<h2>JSON Content:</h2><p>${jsonData.message}</p>`;
-        } catch (error) {
-            console.error('Error loading JSON:', error);
-        }
+        // JSONデータを文字列に変換して表示
+        const jsonContainer = document.getElementById('json-container');
+        jsonContainer.innerHTML = `<h2>JSON Content:</h2>`;
+        
+        // 各メッセージを表示
+        jsonData.forEach(item => {
+            jsonContainer.innerHTML += `<p>${item.message}</p>`;
+        });
+    } catch (error) {
+        console.error('Error loading JSON:', error);
     }
+}
+
 </script>
 
 </body>
