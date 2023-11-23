@@ -1,4 +1,11 @@
-{
-  "message": "Hello" 
-  "message": "Good Moonig"
-}
+[
+  {
+    "message": "Hello"
+  },
+  {
+    "message": "こんにちは"
+  },
+  {
+    "message": "Bonjour"
+  }
+]
