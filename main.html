@@ -33,9 +33,9 @@
             const response = await fetch(rawUrl);
             const jsonData = await response.json();
 
-            // JSONデータを文字列に変換して表示
+            // "message" プロパティの値だけを取り出して表示
             const jsonContainer = document.getElementById('json-container');
-            jsonContainer.innerHTML = `<h2>JSON Content:</h2><pre>${JSON.stringify(jsonData, null, 2)}</pre>`;
+            jsonContainer.innerHTML = `<h2>JSON Content:</h2><p>${jsonData.message}</p>`;
         } catch (error) {
             console.error('Error loading JSON:', error);
         }
